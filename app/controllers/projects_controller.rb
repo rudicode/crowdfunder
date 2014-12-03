@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-
+  skip_before_filter :require_login, only: [:index]
   def index
     @projects = Project.all  
   end
