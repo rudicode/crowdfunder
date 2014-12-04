@@ -1,5 +1,8 @@
 class Project < ActiveRecord::Base
   belongs_to :owner, class_name: 'User', foreign_key: 'owner_id'
+  has_many :pledges
   has_many :backers, through: :pledges, class_name: 'User'
-  # accepts_nested_attributes :rewards
+  has_many :rewards
+  
+  accepts_nested_attributes_for :rewards
 end

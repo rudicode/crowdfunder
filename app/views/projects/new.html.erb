@@ -25,14 +25,19 @@
     <%= f.date_select :finish_date %>
   </div>
 
-  <div class="field">
-    <%= f.label :min_amount %> </br>
-    <%= f.text_field :min_amount %>
-  </div>
-  <div class="field">
-    <%= f.label rewards_attributes[:description] %> </br>
-    <%= f.text_field rewards_attributes[:description] %>
-  </div>
+  <%= f.fields_for :rewards do |r| %>
+ 
+    <div>
+      <%= r.label :description %>
+      <%= r.text_field :description %>
+    </div>
+    <div>
+      <%= r.label :min_amount %>
+      <%= r.text_field :min_amount %>
+    </div>
+ 
+   <% end %>
+
 
   <div class="actions">
     <%= f.submit %>
