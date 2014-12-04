@@ -16,6 +16,24 @@
     <%= f.number_field :goal %>
   </div>
 
+  <div class="field">
+    <%= f.label :start_date %> </br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :finish_date %> </br>
+    <%= f.date_select :finish_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :min_amount %> </br>
+    <%= f.text_field :min_amount %>
+  </div>
+  <div class="field">
+    <%= f.label rewards_attributes[:description] %> </br>
+    <%= f.text_field rewards_attributes[:description] %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
