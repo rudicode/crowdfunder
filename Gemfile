@@ -27,19 +27,14 @@ gem "sorcery"
 
 gem "cocoon"
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-group :development do
-gem 'spring'
-end
-
-group :test do
-  gem 'faker'
-  gem 'rspec'
-end
 
 group :test, :development do
-  gem 'capybara'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'faker'
+  gem 'rspec'
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'pry-rails'
 end
 
