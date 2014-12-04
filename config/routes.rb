@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :user_sessions, only: ['new', 'create', 'destroy']
   resources :projects do
     resources :rewards
+    resources :pledges, only: ['create']
   end
 
   resources :users
