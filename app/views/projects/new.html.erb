@@ -25,20 +25,14 @@
     <%= f.date_select :finish_date %>
   </div>
 
-  <%= f.fields_for :rewards do |r| %>
+  <%= f.fields_for :rewards do |reward| %>
+    <%= render 'rewards/reward_fields', :f => reward %>
+  <% end %>
  
-    <div>
-      <%= r.label :description %>
-      <%= r.text_field :description %>
-    </div>
-    <div>
-      <%= r.label :min_amount %>
-      <%= r.text_field :min_amount %>
-    </div>
- 
-   <% end %>
-
-
+  <div class="nested-fields">
+     <%= link_to_add_association 'Add Reward', f, :rewards, :partial => 'rewards/reward_fields' %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
