@@ -10,7 +10,9 @@ class ProjectsController < ApplicationController
     @total_pledges = Project.find(params[:id]).pledges.sum(:amount)
     if Project.find(params[:id]).pledges!=[]
       @pledge_percent =  [(@total_pledges.to_f / @project.goal.to_f * 100),100].min.to_i
-  end
+    else
+      @pledge_percent =0
+    end
 
   end
 
