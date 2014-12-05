@@ -9,12 +9,25 @@ class Project < ActiveRecord::Base
 # check if there is less than one day left
 # if less than day, display the Remaining hours
 
+# if hour is <= 24 && hour >= 2 
+# 		= hours
+# if hour is > 24 
+# 		= days
+# if hour is = 1 
+# 		= hour
+# if hour is = 24 
+# 		= day
+
 	def remaining
 		
-		if self.hours_remaining <= 24
-			"#{self.hours_remaining}hour(s) remaining"
-		else
-			"#{self.days_remaining}day(s) remaining"
+		if (self.hours_remaining <= 24) && (self.hours_remaining >= 2)
+			"#{self.hours_remaining}hours remaining"
+		elsif self.hours_remaining > 24
+			"#{self.days_remaining}days remaining"
+		elsif self.hours_remaining = 1
+			"#{self.hour_remaining}hour remaining"
+		else self.hours_remaining = 24
+			"#{self.hours_remaining}day remaining"		
 		end
 
 	end
