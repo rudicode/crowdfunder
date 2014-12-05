@@ -9,6 +9,12 @@
 <br>
 <p><%= @project.description %></p>
 
+<ul class="pricing-table">
+<li><%= image_tag(@project.picture) %></li>
+<li class="title"><%= @project.title %></li>
+
+<li class="description"><%= @project.description %></li>
+</ul>
 <% @rewards.each do |reward| %>
 	<%= reward.min_amount %> </br>
 	<%= reward.description %> </br>

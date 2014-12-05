@@ -24,6 +24,11 @@
     <%= f.label :finish_date %> </br>
     <%= f.date_select :finish_date %>
   </div>
+  <div class="field">
+    <%= f.label :picture %> </br>
+    <%= f.text_field :picture %>
+  </div>
+
 
   <%= f.fields_for :rewards do |reward| %>
     <%= render 'rewards/reward_fields', :f => reward %>

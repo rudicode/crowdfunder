@@ -1,5 +1,6 @@
 <%= link_to project_path(project.id) do %>
 <ul class="pricing-table">
+	<li><%= image_tag(project.picture) %></li>
 	<li class="title"><%= project.title %></li>
 	<li class="description"><%= project.description %></li>
 </ul>
