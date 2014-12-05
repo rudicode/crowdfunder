@@ -25,6 +25,7 @@ end
 
 Project.create!({
    owner_id: 1,
-   title: "Carbon Rod",
-   description: "Creating personalized carbon rods for you all fans!!"
+   title: "ProtoFlux - The First Magnetic Filament For Your 3D Printer",
+   description: "Attract magnets and store data with ProtoFlux Magnetic Filament, a new ProtoTek 3D Printing Material."
+
   })
