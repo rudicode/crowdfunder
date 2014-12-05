@@ -1,27 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Crowdfunder</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<p><%= link_to "Projects", projects_path %> | <%= link_to "Create a new Project", new_project_path %> | <%= link_to "Create Account", new_user_path %></p>
-<div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-<%= yield %>
-
-</body>
+  <body>
+    <div class="row">
+      <div class="small-3 column">
+        <div id="nav">
+        <ul>
+          <% if current_user %>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+            <li><%= link_to "Logout", :logout, method: :post %></li>
+          <% else %>
+            <li><%= link_to "Register", new_user_path %></li>
+            <li><%= link_to "Login", :login %></li>
+          <% end %>
+          <li><%= link_to "Projects", projects_path %></li>
+          <li><%= link_to "Create a new Project", new_project_path %></li>
+          <li><%= link_to "Create Account", new_user_path %></li>
+          </ul>
+        </div>
+      </div>
+          
+      <div class="small-9 column">
+        <div>
+          <p id="notice"><%= flash[:notice] %></p>
+          <p id="alert"><%= flash[:alert] %></p>
+        </div>
+        
+        <%= yield %>
+      
+      </div>
+    </div>
+  </body>
 </html>
