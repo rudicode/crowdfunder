@@ -3,6 +3,7 @@
 
 <h1><%= @project.title %></h1>
 
+<h2><%= @project.hours_remaining %></h2>
 <p><%= @project.description %></p>
 <% @rewards.each do |reward| %>
 	<%= reward.min_amount %> </br>
