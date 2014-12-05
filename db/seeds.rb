@@ -7,6 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
+Reward.destroy_all
+Pledge.destroy_all
+Project.destroy_all
+
+User.create!({
+      first_name: "a",
+      last_name:  "a",
+      email:      "a",
+      password:   "a",
+      password_confirmation: "a"
+      })
 
 urls = [
 "https://s3.amazonaws.com/ksr/projects/1307182/photo-carousel.jpg",
@@ -48,7 +59,7 @@ urls.each_with_index do |url,count|
 
   6.times do |index|
     Reward.create!({
-      min_amount: 500 * index+1,
+      min_amount: 500 * (index+1),
       description: "Reward #{index+1}",
       project_id: project.id
       })
