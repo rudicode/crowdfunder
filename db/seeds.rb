@@ -11,22 +11,28 @@
 User.destroy_all
 Project.destroy_all
 
-10.times do |num|
+# 10.times do |num|
 
-  User.create!({
-    first_name: "Homer#{num}",
-    last_name:  "Simpson",
-    email:      "homer#{num}@powerplant.org",
+#   User.create!({
+#     first_name: "Homer#{num}",
+#     last_name:  "Simpson",
+#     email:      "homer#{num}@powerplant.org",
+#     password:   "a",
+#     password_confirmation: "a"
+#     })
+# end
+
+user = User.create!({
+    first_name: "ProtoParadigm",
+    last_name:  ".",
+    email:      "ProtoParadigm@powerplant.org",
     password:   "a",
     password_confirmation: "a"
     })
-end
-
-
 
 Project.create!({
-   owner_id: 1,
+   owner_id: user.id,
    title: "ProtoFlux - The First Magnetic Filament For Your 3D Printer",
    description: "Attract magnets and store data with ProtoFlux Magnetic Filament, a new ProtoTek 3D Printing Material.",
-   picture: "http://upload.wikimedia.org/wikipedia/commons/3/3d/Little_Gasparilla_sunrise.jpg"
+   picture: "https://s3.amazonaws.com/ksr/projects/1307182/photo-carousel.jpg"
   })
