@@ -1441,3 +1441,11 @@ $include-html-global-classes: $include-html-classes;
 // $include-accessibility-classes: true;
 
 @import 'foundation';
+
+.logo {
+	 padding-top: 20px;
+	 padding-left: 10px;
+	 padding-bottom: 15px;
+	 padding-right: 0px;
+
+}
