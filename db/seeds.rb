@@ -9,6 +9,7 @@
 # salt = "asdasdastr4325234324sdfds"
 # crypted_password = Sorcery::CryptoProviders::BCrypt.encrypt("a", salt)
 User.destroy_all
+Project.destroy_all
 
 10.times do |num|
 
@@ -26,5 +27,6 @@ end
 Project.create!({
    owner_id: 1,
    title: "Carbon Rod",
-   description: "Creating personalized carbon rods for you all fans!!"
+   description: "Creating personalized carbon rods for you all fans!!",
+   picture: "http://upload.wikimedia.org/wikipedia/commons/3/3d/Little_Gasparilla_sunrise.jpg"
   })
