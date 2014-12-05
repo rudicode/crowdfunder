@@ -14,7 +14,9 @@ class UsersController < ApplicationController
   end
 
   def show
-  end
+    @user = current_user
+    @projects_list = @user.users_backed_projects
+ end
 
   private
 

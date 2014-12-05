@@ -7,11 +7,14 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @rewards = @project.rewards
+
+
+
   end
 
   def new
     @project = Project.new
-    # 3.times {@project.rewards.build}
+    3.times {@project.rewards.build}
   end
 
   def create
@@ -27,6 +30,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    
   end
 
 private
