@@ -16,7 +16,8 @@ User.destroy_all
     first_name: "Homer#{num}",
     last_name:  "Simpson",
     email:      "homer#{num}@powerplant.org",
-    password:   "a"
+    password:   "a",
+    password_confirmation: "a"
     })
 end
 
