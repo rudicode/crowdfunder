@@ -6,9 +6,9 @@ class Project < ActiveRecord::Base
   
   accepts_nested_attributes_for :rewards, :reject_if => :all_blank
 
-  def hours_remaining
+  def days_remaining
 	remaining = finish_date - start_date
-	(remaining / 1.hour).round
+	(remaining / 1.day).round
   end
 
 
