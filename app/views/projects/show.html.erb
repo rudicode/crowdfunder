@@ -4,7 +4,6 @@
 <h1><%= @project.title %></h1>
 
 <p><%= @project.description %></p>
-<ul>
 <% @rewards.each do |reward| %>
 	<%= reward.min_amount %> </br>
 	<%= reward.description %> </br>
@@ -13,5 +12,4 @@
 		<%= f.submit reward.min_amount %>
 	<% end %>
 <% end %>
-</ul>
 
