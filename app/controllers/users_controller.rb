@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @projects_list = @user.backed_projects
+    @totalbacked = @user.pledges.sum(:amount)
  end
 
   private

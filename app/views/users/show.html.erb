@@ -1,15 +1,9 @@
 <h1>Users Profile</h1>
+<p>Total backed: <%= @totalbacked %></p>
+
 <p>Backed Projects:</p>
 <ul class="small-block-grid-2 large-block-grid-4">
-	<li>
-		<% @projects_list.each do |project| %>
-		<%= link_to project_path(project.id) do %>
-		<ul class="pricing-table">
-			<li><%= image_tag(project.picture) %></li>
-			<li class="title"><%= project.title %></li>
-			<li class="description"><%= project.description %></li>
-		</ul>
-		<% end %>
-		<% end %>
-	</li>
+		<%= render @projects_list %>
+
+	
 </ul>
