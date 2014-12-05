@@ -14,10 +14,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @projects_list = @user.backed_projects
-    @totalbacked = @user.pledges.sum(:amount)
- end
+          #binding.pry
+
+    if params[:id].to_i === current_user.id
+      @user = current_user
+      @projects_list = @user.backed_projects
+      @totalbacked = @user.pledges.sum(:amount)
+      puts @totalbacked
+    else
+      redirect_to projects_path
+    end
+  end
 
   private
 
