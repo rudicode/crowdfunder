@@ -9,6 +9,7 @@
 # salt = "asdasdastr4325234324sdfds"
 # crypted_password = Sorcery::CryptoProviders::BCrypt.encrypt("a", salt)
 User.destroy_all
+Project.destroy_all
 
 10.times do |num|
 
@@ -27,5 +28,5 @@ Project.create!({
    owner_id: 1,
    title: "ProtoFlux - The First Magnetic Filament For Your 3D Printer",
    description: "Attract magnets and store data with ProtoFlux Magnetic Filament, a new ProtoTek 3D Printing Material."
-
+   picture: "http://upload.wikimedia.org/wikipedia/commons/3/3d/Little_Gasparilla_sunrise.jpg"
   })
