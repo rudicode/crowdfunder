@@ -14,7 +14,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    # 3.times {@project.rewards.build}
   end
 
   def create
@@ -22,8 +21,10 @@ class ProjectsController < ApplicationController
     @project.owner_id = current_user.id
     
     if @project.save
-      redirect_to project_path(@project)
+
+      redirect_to project_path(@project), notice: 'Project Created Successfully'
     else
+      flash.now[:alert] = 'Could not create Project'
       render :new
     end
 

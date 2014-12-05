@@ -10,6 +10,10 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
+    <div class="row header">
+      <h1 class="head-title">Crowdfunder</h1>
+    </div>
+
     <div class="row">
       <div class="small-3 column">
         <div id="nav">
@@ -25,15 +29,18 @@
           <li><%= link_to "Create a new Project", new_project_path %></li>
           <li><%= link_to "Create Account", new_user_path %></li>
           </ul>
+          <div class="row">
+            <% flash.each do |name, msg| %>
+              <% if msg.is_a?(String) %>
+                <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
           
       <div class="small-9 column">
-        <div>
-          <p id="notice"><%= flash[:notice] %></p>
-          <p id="alert"><%= flash[:alert] %></p>
-        </div>
-        
+                
         <%= yield %>
       
       </div>

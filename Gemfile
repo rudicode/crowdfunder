@@ -27,7 +27,7 @@ gem "sorcery"
 
 gem "cocoon"
 
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.4.5'
 
 
 group :test, :development do
