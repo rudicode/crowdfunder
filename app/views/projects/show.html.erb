@@ -1,9 +1,12 @@
 
 <%= link_to 'Back', projects_path %>
 
-<h1><%= @project.title %></h1>
+<ul class="pricing-table">
+<li><%= image_tag(@project.picture) %></li>
+<li class="title"><%= @project.title %></li>
 
-<p><%= @project.description %></p>
+<li class="description"><%= @project.description %></li>
+</ul>
 <% @rewards.each do |reward| %>
 	<%= reward.min_amount %> </br>
 	<%= reward.description %> </br>
