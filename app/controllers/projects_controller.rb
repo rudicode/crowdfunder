@@ -7,8 +7,9 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @rewards = @project.rewards
-
-
+    @total_pledges = Project.find(params[:id]).pledges.sum(:amount)
+ 
+    @pledge_percent =  (@total_pledges.to_f / @project.goal.to_f * 100) 
 
   end
 

@@ -2,8 +2,13 @@
 <%= link_to 'Back', projects_path %>
 
 <h1><%= @project.title %></h1>
-
+<div class="progress large-6 success round">
+	<span class="meter" style="width: <%= @pledge_percent %>%">
+	</span><%= @pledge_percent %>% : $<%= @project.goal %> of $<%= @total_pledges %> raised
+</div>
+<br>
 <p><%= @project.description %></p>
+
 <% @rewards.each do |reward| %>
 	<%= reward.min_amount %> </br>
 	<%= reward.description %> </br>
