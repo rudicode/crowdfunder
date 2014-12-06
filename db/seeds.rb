@@ -65,3 +65,10 @@ urls.each_with_index do |url,count|
       })
   end
 end
+
+Pledge.create!({
+  amount: Reward.last.min_amount,
+  project_id: Project.last.id,
+  user_id: Project.last.owner.id
+
+  })
