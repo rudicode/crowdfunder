@@ -1,28 +1,47 @@
 <%= form_for @user do |f| %>
-<div class="field">
-   <%= f.label :first_name %><br />
-   <%= f.text_field :first_name %>
-</div>   
-<div class="field">
-   <%= f.label :last_name %><br />
-   <%= f.text_field :last_name %>
-</div>
-<div class="field">
-   <%= f.label :email %><br />
-   <%= f.text_field :email %>
-</div>
-  
-  
-<div class="field">
-   <%= f.label :password %><br />
-   <%= f.password_field :password %>
-</div>
-<div class="field">
-   <%= f.label :password_confirmation %><br />
-   <%= f.password_field :password_confirmation %>
-</div>
-<div class="actions">
-    <%= f.submit %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= pluralize(@user.errors.count, "error") %> when creating a user:</h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li class="alert-box alert round"><%= message %></li>
+    <% end %>
+    </ul>
   </div>
+<% end %>
+
+<div class="row">
+  <div class="small-6 columns">
+    
+    <div class="field">
+       <%= f.label :first_name %><br />
+       <%= f.text_field :first_name %>
+    </div>   
+    <div class="field">
+       <%= f.label :last_name %><br />
+       <%= f.text_field :last_name %>
+    </div>
+    <div class="field">
+       <%= f.label :email %><br />
+       <%= f.text_field :email %>
+    </div>
+  </div>
+    
+  <div class="small-6 columns">
+    
+    <div class="field">
+       <%= f.label :password %><br />
+       <%= f.password_field :password %>
+    </div>
+    <div class="field">
+       <%= f.label :password_confirmation %><br />
+       <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+  </div>  
+</div>
 
 <% end %>
